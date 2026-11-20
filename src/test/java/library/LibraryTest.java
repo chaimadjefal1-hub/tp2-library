@@ -90,8 +90,10 @@ class LibraryTest{
     @Test
     void searchByTitleIgnoresCase() {
         library.addBook(new Book("978-0-00-000002-8", "Design Patterns", 1994));
+
         assertEquals(1, library.searchByTitle("SOFTWARE").size());
-        assertEquals("Software Engineering", library.searchByTitle("engineer").get(0).getTitle());
+        assertEquals("Software Engineering",
+                library.searchByTitle("engineer").get(0).getTitle());
         assertEquals(1, library.searchByTitle("patterns").size());
     }
 

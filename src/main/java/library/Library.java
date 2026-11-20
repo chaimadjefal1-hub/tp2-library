@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /** The library: books, copies, members and loans. */
 public class Library {
@@ -34,7 +35,8 @@ public class Library {
         }
         copies.put(inventoryNumber, new Copy(inventoryNumber, book));
     }
-
+    
+   
     public void registerMember(Member member) {
         if (members.containsKey(member.getNumber())) {
             throw new IllegalArgumentException("Member already registered: " + member.getNumber());
